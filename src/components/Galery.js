@@ -3,113 +3,82 @@ import { LitElement, css, html } from 'lit'
 export class galery extends LitElement {
 
     static styles = css `
-:host {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #222;
-    color: #fff;
-}
+    :host {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #222;
+        color: #fff;
+    }
 
-.form-container {
-    max-width: 400px;
-    width: 100%;
-}
+    button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
-form {
-    background-color: #333;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; 
+    }
 
-label {
-    display: block;
-    margin-bottom: 10px;
-    color: #ccc;
-}
+    .modal-content {
+        background-color: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        max-width: 80%;
+        max-height: 80%;
+        overflow: auto;
+    }
 
-input[type="number"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #555;
-    border-radius: 4px;
-    background-color: #444;
-    color: #fff;
-}
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        color: #FF0000;
+        font-size: 30px;
+    }
 
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    .close:hover {
+        color: #ccc;
+    }
 
-.modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999; 
-        }
+    .modal-content img {
+        width: 100%;
+        height: auto;
+    }
 
-        .modal-content {
-            background-color: #333;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-            max-width: 80%;
-            max-height: 80%;
-            overflow: auto;
-        }
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+    }
 
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            color: #fff;
-            font-size: 20px;
-        }
-
-        .close:hover {
-            color: #ccc;
-        }
-
-        .modal-content img {
-            width: 100%;
-            height: auto;
-        }
-
-button:hover {
-    background-color: #0056b3;
-}
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 10px;
-        }
-
-        .image-grid img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            cursor: pointer;
-        }
+    .image-grid img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+    }
         
-        .image-grid img:hover {
-            transform: scale(1.1, 1.1);
-        }
-        //me encanta el CSS <3
+    .image-grid img:hover {
+        transform: scale(1.1, 1.1);
+    }
+    //me encanta el CSS <3
 
     `
     constructor() {
