@@ -20,6 +20,10 @@ body {
   min-height: 100vh;
 }
 
+.title {
+  margin: 50px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

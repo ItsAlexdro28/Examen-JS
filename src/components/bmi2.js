@@ -45,7 +45,7 @@ class BMIComponent extends LitElement {
 
   getImage() {
     const bmiRanges = [
-      { min: 0, max: 18.5, image: 'public/images/obesidad2.jpg' },
+      { min: 0, max: 18.5, image: 'public/images/bajo-peso.png' },
       { min: 18.5, max: 24.9, image: 'public/images/peso-normal.webp' },
       { min: 25, max: 29.9, image: 'public/images/sobrepeso.jpg' },
       { min: 30, max: 34.9, image: 'public/images/obesidad1.jpg' },
