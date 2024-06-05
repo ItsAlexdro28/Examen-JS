@@ -1,6 +1,6 @@
 ## Examen JavaScript
 
-#### 1er Problema - IMC
+### 1er Problema - IMC
 
 ### 2do Problema - Galeria imagenes
 
